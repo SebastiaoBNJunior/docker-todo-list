@@ -8,10 +8,10 @@ EXPOSE 3000
 WORKDIR /app/front-end
 
 # Adicione o arquivo node_modules.tar.gz à imagem
-ADD node_modules.tar.gz . /app/front-end
+ADD node_modules.tar.gz .
 
 # Copie todos os arquivos da pasta front-end para a imagem
-COPY . . /app/front-end
+COPY . .
 
 ENTRYPOINT [ "npm" ]
 # Defina o comando padrão para iniciar a aplicação
