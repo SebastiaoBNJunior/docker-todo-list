@@ -9,10 +9,14 @@ EXPOSE 3001
 WORKDIR /app/back-end
 
 # Adicione o arquivo node_modules.tar.gz à imagem
-ADD node_modules.tar.gz /app/back-end
+# ADD node_modules.tar.gz /app/back-end
+ADD node_modules.tar.gz .
 
 # Copie todos os arquivos da pasta back-end para a imagem
-COPY . /app/back-end
+# COPY . /app/back-end
+COPY . .
+
+ENTRYPOINT [ "npm" ]
 
 # Defina o comando padrão para iniciar a aplicação
-CMD ["npm", "start"]
+CMD ["start"]
